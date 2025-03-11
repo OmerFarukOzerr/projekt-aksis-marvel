@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#121212</color> <!-- Koyu gri / siyah arka plan için -->
+    <color name="colorPrimaryVariant">#1E1E1E</color> <!-- Biraz daha açık gri ton -->
+    <color name="colorOnPrimary">#FFFFFF</color> <!-- Beyaz yazılar için -->
+
+    <color name="colorSecondary">#FF4500</color> <!-- Canlı turuncu ton (butonlar ve vurgular için) -->
+    <color name="colorSecondaryVariant">#FF6347</color> <!-- Biraz daha açık turuncu / kırmızımsı ton -->
+    <color name="colorOnSecondary">#000000</color> <!-- İkincil butonlar için koyu yazı rengi -->
+
+
+        <!-- Arka plan renkleri -->
+        <color name="bgColor">#1E1F28</color> <!-- Koyu arka plan -->
+        <color name="toolbarBackground">#2A2D3A</color> <!-- Üst çubuk rengi -->
+
+        <!-- Metin renkleri -->
+        <color name="titleColor">#FFFFFF</color> <!-- Başlık yazı rengi (Beyaz) -->
+        <color name="subtitleColor">#B0B3C0</color> <!-- Alt başlık yazı rengi (Gri) -->
+
+        <!-- İkon renkleri -->
+        <color name="iconColor">#E63946</color> <!-- Favori ikonu rengi (Kırmızı) -->
+        <color name="iconSecondaryColor">#F4A261</color> <!-- Arama ikonu rengi (Turuncu) -->
+
+
+    <color name="colorError">#F44336</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#212121</color>
+    <color name="colorBackground"> </color>
+    <color name="colorOnBackground">#212121</color>
+    <color name="bgShimmer">#B1B3CC</color>
+    <color name="splashPrimary">#B8C0CD</color>
+
+    <color name="dark_gray">#616161</color>
+
+    <color name="light_gray">#B8C0CD</color>
+    <color name="gray">#757575</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

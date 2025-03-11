@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.MealDetailFragment">
+
+    <data>
+        <variable
+            name="heroDetails"
+            type="com.example.project_aksis.model.Result" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="5dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/backToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/toolbarBackground">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/detailBackImage"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_circle_dark"
+                        android:padding="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/ic_arrow_back" />
+
+                    <ImageView
+                        android:id="@+id/detailFav"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_circle_dark_back"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_hero_detail_fav"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/colorSecondaryVariant" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/detailLay"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <ScrollView
+                android:id="@+id/listDetailLay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/detailContentLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!--Cover-->
+                    <ImageView
+                        android:id="@+id/detailCharImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="320dp"
+                        android:scaleType="centerCrop"
+                        android:bindWithDownloadUrl="@{String.format(@string/load_url_detail_normal,heroDetails.thumbnail.path, heroDetails.thumbnail.extension)}"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/listHeaderLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="-50dp"
+                        android:backgroundTint="@color/toolbarBackground"
+                        app:layout_constraintTop_toBottomOf="@id/detailCharImage">
+
+                        <TextView
+                            android:id="@+id/detailCharTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="30dp"
+                            android:layout_marginTop="10dp"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="@{heroDetails.name}"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:drawableTint="@color/colorSecondary"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/detailListLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/listHeaderLay">
+
+                        <TextView
+                            android:id="@+id/seriesTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="2dp"
+                            android:text="Series"
+                            android:textColor="@color/white"
+                            android:textSize="17sp"
+                            android:backgroundTint="@color/toolbarBackground"
+                            app:layout_constraintTop_toBottomOf="@id/detailCharImage" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/seriesRec"
+                                android:layout_width="match_parent"
+                                android:layout_marginVertical="5dp"
+                                android:layout_height="wrap_content"
+                                android:nestedScrollingEnabled="false"/>
+
+                        <TextView
+                            android:id="@+id/storyNameTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="2dp"
+                            android:text="Story Names"
+                            android:textColor="@color/white"
+                            android:textSize="17sp"
+                            android:backgroundTint="@color/toolbarBackground"
+                            app:layout_constraintTop_toBottomOf="@id/detailCharImage" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/storyRec"
+                            android:layout_width="match_parent"
+                            android:layout_marginVertical="5dp"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"/>
+
+                        <TextView
+                            android:id="@+id/eventTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="2dp"
+                            android:text="Events"
+                            android:textColor="@color/white"
+                            android:textSize="17sp"
+                            android:backgroundTint="@color/toolbarBackground"
+                            app:layout_constraintTop_toBottomOf="@id/detailCharImage" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/eventsRec"
+                            android:layout_width="match_parent"
+                            android:layout_marginVertical="5dp"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"/>
+
+                        <TextView
+                            android:id="@+id/comicsTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="2dp"
+                            android:text="Comics"
+                            android:textColor="@color/white"
+                            android:textSize="17sp"
+                            android:backgroundTint="@color/toolbarBackground"
+                            app:layout_constraintTop_toBottomOf="@id/detailCharImage" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/comicsRec"
+                            android:layout_width="match_parent"
+                            android:layout_marginVertical="5dp"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"/>
+
+                    </LinearLayout>
+                    <!--Content-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+
+            <ProgressBar
+                android:id="@+id/listDetailProgressBar"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

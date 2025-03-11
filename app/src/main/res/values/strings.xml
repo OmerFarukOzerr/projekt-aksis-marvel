@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">project_aksis</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="load_url_list_normal">%s/standard_xlarge.%s</string>
+    <string name="load_url_list_big">%s/landscape_incredible.%s</string>
+    <string name="load_url_detail_normal">%s/landscape_xlarge.%s</string>
+    <string name="generic_text">My Name is %1$s %2$s</string>
+    <string name="series">Series Count:%s</string>
+
+
+
+    <string name="home">Home</string>
+    <string name="favorite">Favorites</string>
+    <string name="hello_welcome">Welcome</string>
+    <string name="home_title">Project Aksis</string>
+
+
+</resources>
